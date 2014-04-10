@@ -8,3 +8,6 @@ deny from all
 <Files "login_action.php">
     Allow from all
 </Files>
+<Files "dashboard.php">
+    Allow from all
+</Files>
