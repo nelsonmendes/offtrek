@@ -60,8 +60,10 @@ h2 {
 }
 /* Mobile Menu */
 .mobile-header {
+	margin-left: 30px;
+	margin-top: 30px;
 	line-height: 100%;
-	width: 100%;
+	width: 70%;
 	display: block;
 	position: relative;
 	z-index: 30;
@@ -112,49 +114,26 @@ h2 {
 .mobile-header ul li.active a {
 	border-right: 1px solid #63A832;
 }
-/* Mobile Menu */
-.mobile-menu {
-	/* background: #222222; */
-	margin: 0px;
-	padding: 30px;
-	width: 140px;
-	text-transform: none;
-	font-size: 12px;
-	position: absolute;
-	top: 72px;
-	bottom: 0px;
-	left: -200px; /* Hides Brief Menu Popup As JavaScript Loads */
-	z-index: 9998;
-	display: block;
-	height: 100%;
-	overflow: hidden;
-	color: #ffffff;
-}
-.mobile-menu.active {
-	height: auto;
-	overflow: visible;
-}
-.mobile-menu-bg {
-	background: #222222;
-	margin: 0px;
-	position: fixed;
-	width: 200px;
-	top: 0px;
-	bottom: 0px;
-	left: -200px; /* Hides Brief Menu Popup As JavaScript Loads */
-	z-index: 9997;
-	display: block;
-	height: 100%;
-	-webkit-box-shadow: inset 0px 0px 100px 0px rgba(0, 0, 0, 1);
-	box-shadow: inset 0px 0px 100px 0px rgba(0, 0, 0, 1);
-}
-.mobile-menu.active,
-.mobile-menu-bg.active {
-	display: block;
-}
+
+
 /* Floats */
 .clearfloat:after {
 	content: ""; 
 	display: table;
 	clear: both;
+}
+
+#sidebar {
+	width: 200px;
+	float: right;
+	margin-right: 50px;
+	padding: 5px 0 0 5px;
+}
+.size_inc{
+	height:47px;
+	display:table-cell;
+	vertical-align: middle;
+}
+.center-gly{
+	padding-bottom: 11px;
 }

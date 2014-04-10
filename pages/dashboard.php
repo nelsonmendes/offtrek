@@ -8,9 +8,22 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 	<!-- START CSS -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300' rel='stylesheet' type='text/css'>
+	    <link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href='../css/style.css' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
+	<div id="sidebar">
+            <div class="input-group custom-search-form">
+              <input type="text" class="form-control size_inc">
+              <span class="input-group-btn size_inc">
+              <button class="btn btn-default size_inc" type="button">
+              <span class="glyphicon glyphicon-search size_inc center-gly"></span>
+             </button>
+             </span>
+             </div><!-- /input-group -->
+	</div></div>
+	<div class="topbar">
 	<div class="mobile-header">
 	<ul class="clearfloat">
 		<li>
@@ -25,10 +38,8 @@
 		<li>
 			<a href="">Contacts</a>
 		</li>
-		
 	</ul>
 </div>
-
 <div id="container-outer">
 	
 	<div id="container">
