@@ -11,3 +11,10 @@ deny from all
 <Files "dashboard.php">
     Allow from all
 </Files>
+<Files "maps.html">
+    Allow from all
+</Files>
+
+<Files "timeline.php">
+    Allow from all
+</Files>
