@@ -6,68 +6,30 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 	<meta name="description" content=""/>
-	<title>dashboard</title>
+	<title>Dashboard</title>
 	<!-- START Javascript -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<!-- START CSS -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300' rel='stylesheet' type='text/css'>
 	    <link href="../css/bootstrap.min.css" rel="stylesheet">
-	<link href='../css/style.css' rel='stylesheet' type='text/css'>
-	<link href='../css/timeline.css' rel='stylesheet' type='text/css'>
+	    <link href='../css/timeline.css' rel='stylesheet' type='text/css'>
+	    <link href='../css/new.css' rel='stylesheet' type='text/css'>
 
 
-</head>
-<body>
 
-	<div id="sidebar">
-            <div class="input-group custom-search-form">
-              <input type="text" class="form-control size_inc">
-              <span class="input-group-btn size_inc">
-              <button class="btn btn-default size_inc" type="button">
-              <span class="glyphicon glyphicon-search size_inc center-gly"></span>
-             </button>
-             </span>
-             </div><!-- /input-group -->
 
-	</div>
-
-	<div class="topbar">
-	<div class="mobile-header">
-	<ul class="clearfloat">
-		<li>
-			<a href="">Home</a>
-		</li>
-		<li>
-			<a href="">Profile</a>
-		</li>
-		<li>
-			<a href="">Explore</a>
-		</li>
-		<li>
-			<a href="">Contacts</a>
-		</li>
-	</ul>
-</div>
-</div>
-
-<div id="container-outer">
-	
-	<div id="container">
-		<div id="container-inner">
-			<h1>Nelson Mendes</h1>
-			<h2>Coisas dele</h2>
-			<p>
-				Listar os percursos dele
-			</p>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+		<?php
+			include 'navbar.php'
+			?>
+			</div>
 		</div>
-    <div id="sidebar2">
-    some thinsg
-    </div>
-</div>
 
-</div>
-
-  <div class="container-fluid" style="background-color:#e8e8e8">
+<div class="container-fluid">
         <div class="container container-pad" id="property-listings">
             
             <div class="row">
@@ -336,5 +298,5 @@
             </div><!-- End row -->
         </div><!-- End container -->
     </div>
-</body>
-</html>
+
+	</body>

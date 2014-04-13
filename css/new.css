@@ -1,0 +1,30 @@
+h1,
+h2 {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 150%;
+	color: #ffffff;
+	padding: 20px;
+}
+h1 {
+	font-weight: 300;
+	font-size: 32px;
+	background: #222222;
+}
+h2 {
+	font-weight: 700;
+	font-size: 20px;
+	background: #77c043;
+	display: inline-block;
+	margin: 0px 0px 20px 0px;
+}
+body{
+	background-color:#e8e8e8
+}
+
+.navbar{
+	margin-top: 30px;
+	background-color:#e8e8e8
+}
+.navelem{
+	margin-left: 10px;
+}
