@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Create a polyline using Geolocation and Google Maps API</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-<script type="text/javascript">
-    var markers = [
+var markers = [
             {
                 "title": 'Paredes',
                 "lat": '41.206279',
@@ -28,7 +20,7 @@
                 "description": 'Pune is the seventh largest metropolis in India, the second largest in the state of Maharashtra after Mumbai.'
             }
     ];
-    window.onload = function () {
+    function googlemaps() {
         var mapOptions = {
             center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
             zoom: 10,
@@ -90,7 +82,3 @@
             }
         }
     }
-</script>
-<div id="dvMap" style="width: 1000px; height: 500px">
-</div>
-</html>
