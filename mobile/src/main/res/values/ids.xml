@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="startButton" type="id">start_button</item>
+    <item name="stopButton" type="id">stop_button</item>
+    <item name="httpRequestButton" type="id">send_http_request_button</item>
+</resources>
