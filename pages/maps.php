@@ -1,8 +1,9 @@
+<?php
+@ob_start();
+session_start();
+?>
 <html lang="en">
         <head>
-        <?php
-        session_start();
-        ?>
             <head>
             <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
             <meta name="description" content=""/>
