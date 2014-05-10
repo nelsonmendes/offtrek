@@ -16,6 +16,7 @@
 	    <link href='../css/timeline.css' rel='stylesheet' type='text/css'>
 	    <link href='../css/new.css' rel='stylesheet' type='text/css'>
 
+hbasbhajshb,da
 
 
 
@@ -31,15 +32,15 @@
 
 <div class="container-fluid">
         <div class="container container-pad" id="property-listings">
-            
+
             <div class="row">
               <div class="col-md-12">
                 <h1>Percursos de Utilizador</h1>
               </div>
             </div>
-            
+
             <div class="row">
-                <div class="col-sm-6"> 
+                <div class="col-sm-6">
 
                     <!-- Begin Listing: 609 W GRAVERS LN-->
                     <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
@@ -187,7 +188,7 @@
 
                 </div>
 
-                <div class="col-sm-6">  
+                <div class="col-sm-6">
 
                     <!-- Begin Listing: 1220-32 N HOWARD ST-->
                     <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
