@@ -15,11 +15,6 @@
 	    <link href="../css/bootstrap.min.css" rel="stylesheet">
 	    <link href='../css/timeline.css' rel='stylesheet' type='text/css'>
 	    <link href='../css/new.css' rel='stylesheet' type='text/css'>
-
-hbasbhajshb,da
-
-
-
 	</head>
 	<body>
 		<div class="container">
