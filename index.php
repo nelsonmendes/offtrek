@@ -29,7 +29,7 @@ session_start();
           <p class="lead"></p></h1>
       </div>
       <?php
-      if ($_SESSION['id'] != 1 || !isset($_SESSION['id'])){
+      if (!isset($_SESSION['id']) || $_SESSION['id'] != 1){
       ?>
       <div class="col-sm-6">
         <div class="pull-right  hidden-xs">
@@ -38,7 +38,7 @@ session_start();
       </div>
       <?php
     }
-    if ($_SESSION['id'] == 1){
+    else if ($_SESSION['id'] == 1){
       ?>
       <div class="col-sm-6">
         <div class="pull-right  hidden-xs">
