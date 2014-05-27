@@ -3,10 +3,8 @@ session_start();
 ?>
 
 <html>
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/main.css" rel="stylesheet">
-
-</style>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
 <script src="../js/TweenLite.min.js"></script>
 
 <div class="container">
