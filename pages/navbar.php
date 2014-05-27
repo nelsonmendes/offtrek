@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -14,27 +17,24 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="navelem">
-          <a href="">Home</a>
+          <a href="pages/main.php">Home</a>
         </li>
           <li class="navelem">
-          <a href="">Profile</a>
+          <a href="pages/profile.php">Profile</a>
         </li>
           <li class="navelem">
-          <a href="">Explore</a>
+          <a href="pages/explore.php">Explore</a>
         </li>
           <li class="navelem">
-          <a href="">Contacts</a>
+          <a href="pages/contacts.php">Contacts</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nome do User <b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['username']; ?><b class="caret"></b></a>
             <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="logout.php">Log-off</a></li>
           </ul>
         </li>
       </ul>
@@ -44,7 +44,7 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
-        
+
       </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>

@@ -29,7 +29,7 @@ session_start();
           <p class="lead"></p></h1>
       </div>
       <?php
-      if ($_SESSION['id'] != 1 && isset($_SESSION['id'])){
+      if ($_SESSION['id'] != 1 || !isset($_SESSION['id'])){
       ?>
       <div class="col-sm-6">
         <div class="pull-right  hidden-xs">
