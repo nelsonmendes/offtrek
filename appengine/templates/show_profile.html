@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Foodrific</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/bPopup.js"></script>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icon-ipad.png" />
+  </head>
+  <body>
+    <div id="header">
+      <a id="profileButton" href="profile?user={{user_id}}"><img src="api/get_avatar?email={{user_email}}" height="30px"/></a>
+      <a href="/"><img src="images/logo-white.svg" height="50px" /></a>
+      <a id="logoutButton" href="/logout"><img src="images/logout.svg" height="25px" /></a>
+    </div>
+    <div id="banner">
+      <div class="container">
+        <div id="editProfileForm">
+          <div class="container">
+            <h1>Perfil</h1>
+            <div id="nameField" class="field_display">
+              <div><span class="label_show">Nome: </span><a style="cursor: pointer" onclick="editName()"><img src="images/edit_field.svg" height="22px"/></a></div>
+              <span class="field_value">{{ p_name }}</span>
+            </div>
+            <div id="emailField" class="field_display">
+              <div><span class="label_show">Email: </span><a style="cursor: pointer" onclick="editEmail()"><img src="images/edit_field.svg" height="22px"/></a></div>
+              <span class="field_value">{{ p_email }}</span>
+            </div>
+            <div id="birthdayField" class="field_display">
+              <div><span class="label_show">Data de nascimento: </span><a style="cursor: pointer" onclick="editBirthday()"><img src="images/edit_field.svg" height="22px"/></a></div>
+              <span class="field_value">{{ p_birthday }}</span>
+            </div>
+            <div id="genderField" class="field_display">
+              <div><span class="label_show">Sexo: </span><a style="cursor: pointer" onclick="editGender()"><img src="images/edit_field.svg" height="22px"/></a></div>
+              <span class="field_value">{{ p_gender }}</span>
+            </div>
+            <div id="passwordField" class="field_display">
+              <div><span class="label_show">Password: </span><a style="cursor: pointer" onclick="editPassword()"><img src="images/edit_field.svg" height="22px"/></a></div>
+              <span class="field_value">********</span>
+            </div>
+            <input class="button_change orange" onclick="deleteUserClick()" type="submit" value="Apagar perfil"/>
+          </div>
+        </div>
+        <!-- Edit field profile -->
+        <div id="editName">
+          <div class="container">
+            <form action="edit_profile_handler" method="post" onsubmit="return validateEditNameForm()">
+              <input type="text" name="type" value="name" hidden/>
+              <div id="nameAlert" class="alert"></div>
+              <input id="editNameField" type="text" name="name" placeholder="nome" value="{{ p_name }}" maxlength="25"/><br/>
+              <br/>
+              <input type="submit" value="Alterar" class="blue"/>
+            </form>
+          </div>
+        </div>
+
+        <div id="editEmail">
+          <div class="container">
+            <form action="edit_profile_handler" method="post" onsubmit="return validateEditEmailForm()">
+              <input type="text" name="type" value="email" hidden/>
+              <div id="emailAlert" class="alert"></div>
+              <input id="editEmailField" type="email" name="email" placeholder="email" value="{{ p_email }}" /><br/>
+              <br/>
+              <input type="submit" value="Alterar" class="blue"/>
+            </form>
+          </div>
+        </div>
+
+        <div id="editBirthday">
+          <div class="container">
+            <form action="edit_profile_handler" method="post" onsubmit="return validateEditBirthdayForm()">
+              <input type="text" name="type" value="birthday" hidden/>
+              <div id="birthdayAlert" class="alert"></div>
+              <input id="editBirthdayField" type="name" name="birthday" placeholder="nascimento(DD/MM/AAAA)" value="{{ p_birthday }}"><br/>
+              <br/>
+              <input type="submit" value="Alterar" class="blue"/>
+            </form>
+          </div>
+        </div>
+
+        <div id="editGender">
+          <div class="container">
+            <form action="edit_profile_handler" method="post">
+              <input type="text" name="type" value="gender" hidden/>
+              <div id="genderAlert" class="alert"></div>
+              <select name="gender">
+              {% if p_gender == 'masculino' %}
+                <option value="m" selected="selected">masculino</option>
+                <option value="f">feminino</option>
+                {% endif %}
+                {% if p_gender == 'feminino' %}
+                <option value="m">masculino</option>
+                <option value="f" selected="selected">feminino</option>
+                {% endif %}
+              </select><br/>
+              <br/>
+              <input type="submit" value="Alterar" class="blue"/>
+            </form>
+          </div>
+        </div>
+
+        <div id="editPassword">
+          <div class="container">
+            <form action="edit_profile_handler" method="post" onsubmit="return validateEditPasswordForm()">
+              <input type="text" name="type" value="password" hidden/>
+              <div id="oldPasswordAlert" class="alert"></div>
+              <input id="editOldPasswordField" type="password" name="old_password" placeholder="senha antiga"><br/>
+              <div id="passwordAlert" class="alert"></div>
+              <input id="editNewPasswordField" type="password" name="password" placeholder="nova senha"><br/>
+              <div id="passwordConfirmAlert" class="alert"></div>
+              <input id="editConfNewPasswordField" type="password" name="passwordConfirm" placeholder="confirmar nova senha"><br/>
+              <br />
+              <input type="submit" value="Alterar" class="blue"/>
+            </form>
+          </div>
+        </div>
+
+        <div id="questionPopUp">
+        <div class="container">
+          <h1>Confirma apagar?</h1>
+          <br>
+          <div class="buttons">
+          <form method="post" action="api/delete_user" enctype="multipart/form-data">
+            <input class="button_change orange" type="submit" value="Sim"/>
+            </form>
+            <input type="button" class="blue" name "no" value="Não" onclick="deleteUserNo()"/>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>

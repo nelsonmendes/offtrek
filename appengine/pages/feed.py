@@ -25,9 +25,9 @@ class Feed(BaseHandler):
             def putLikes(post):
                 post_user_id = post.user.key().id()
                 post_id = post.key().id()
-                yummys = getPostLikes(post_id)
+                likes = getPostLikes(post_id)
                 post.likes = len(likes)
-                post.likeDone = LikesDone(user_id, post_id)
+                post.likeDone = LikeDone(user_id, post_id)
                 return post
 
             # Get post comments
