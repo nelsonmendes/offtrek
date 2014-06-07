@@ -1,0 +1,163 @@
+@import url(http://fonts.googleapis.com/css?family=Bubbler+One);
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: #ffdfbf;
+	font-family: 'Verdana', sans-serif;
+}
+
+#header{
+	height: 60px;
+	width: 100%;
+	background-color: #b05b27;
+	text-align: center;
+	vertical-align: middle;
+	padding: 10px 0 0 0;
+	border-bottom: solid 8px #d98451;
+}
+
+.container {
+	width: 900px;
+	margin: 0 auto;
+	overflow: auto;
+
+}
+
+h1 {
+	color: #4c3a30;
+	font-size: 58px;
+}
+
+input, select, textarea{
+	-webkit-appearance: none;
+	background: #FFF;
+	border-radius: 0;
+	width: 300px;
+	color: #b3612f;
+	border: solid 1px #fedab5;
+	padding: 10px;
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+input[type="submit"].orange,
+input[type="button"].orange, 
+button.orange{
+	background-color: #d93600;
+	color: #FFF;
+	border: solid 1px #a22c03;
+}
+
+input[type="submit"].orange:hover,
+input[type="button"].orange:hover, 
+button.orange:hover{
+	background-color: #e7501b;
+}
+
+input[type="submit"].blue,
+input[type="button"].blue, 
+button.blue{
+	background-color: #4078d5;
+	color: #FFF;
+	border: solid 1px #17448f;
+}
+
+input[type="submit"].blue:hover,
+input[type="button"].blue:hover, 
+button.blue:hover{
+	background-color: #508aea;
+}
+
+/** Alerts **/
+.alert {
+	color: red;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+#logoutButton {
+	position: absolute;
+	padding-right: 20px;
+	padding-top: 12px;
+	right:0px;
+}
+
+#profileButton {
+	position: absolute;
+	padding-left: 20px;
+	padding-top: 12px;
+	left:0px;
+}
+
+.label_show {
+	width: 276px;
+	font-size: 22px;
+	text-align: left;
+	display: inline-block;
+	font-weight:bold;
+	color: #b3612f;
+}
+
+.field_value {
+	width: 300px;
+	padding: 10px;
+	font-size: 18px;
+	text-align: center;
+	display: inline-block;
+	color: #999999;
+}
+
+.button_change {
+	width: 320px;
+}
+
+.field_display {
+	width: 320px;
+	display: block;
+	margin: 0 auto;
+	border: solid 2px #efc296;
+	background: #FFFFFF;
+	margin-bottom: 10px;
+}
+
+#editProfileForm {
+	padding-top: 15px;
+	text-align: center;
+}
+
+#editProfileForm h1 {
+	margin-bottom: 30px !important;
+}
+
+#questionPopUp,
+#deleteUserPopUp,
+.popup {
+	display: none;
+	background-color: #ffdfbf;
+	text-align: center;
+	padding: 30px 0 30px 0;
+}
+
+#questionPopUp h1,
+#deleteUserPopUp h1,
+.popup h1{
+	font-size: 30px;
+}
+#questionPopUp,
+#deleteUserPopUp {
+		width: 80%;
+}
+
+#questionPopUp input,
+#deleteUserPopUp input {
+	width: 90%;
+}
+
+.box{
+	background-color: #fff3e8;
+	border: solid 1px #efc296;
+}

@@ -1,0 +1,184 @@
+.container {
+	width: 900px;
+	margin: 0 auto;
+	overflow: auto;
+
+}
+
+#banner{
+	overflow: auto;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: 20 -30px;
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+#banner h1{
+	color: #4c3a30;
+	font-size: 44px;
+	margin: 0;
+
+}
+
+#banner .food{
+	float: left;
+}
+
+#banner .info{
+	padding-top: 50px;
+	padding-left: 20px;
+	width: 500px;
+	float: left;
+}
+
+#banner button{
+	margin-top: 20px;
+	font-size: 30px;
+	padding: 10px 40px 10px 40px;
+	border-radius: 0;
+	cursor: pointer;
+}
+
+
+#registerForm,
+#loginForm,
+#passwordForm{
+	padding-top: 15px;
+	text-align: center;
+}
+
+#registerForm h1{
+	margin-bottom: 30px;
+}
+
+#registerForm select{
+	width: 322px;
+}
+
+#loginForm h1{
+	margin-bottom: 30px;
+}
+
+#passwordForm h1{
+	margin-bottom: 5px;
+}
+
+#passwordForm select{
+	width: 320px;
+}
+
+#recoverPasswordForm input[type="submit"],
+#registerForm input[type="submit"], 
+#loginForm input[type="submit"],
+#passwordForm input[type="submit"]{
+	width: 320px;
+}
+
+#editName, #editEmail, #editBirthday, #editGender,
+#editPassword{
+	display: none;
+	background-color: #ffdfbf;
+	text-align: center;
+	padding: 10px 0 10px 0;
+}
+
+#registerForm .alert,
+#loginForm .alert,
+#passwordForm .alert{
+	width: 320px;
+	margin: 0 auto;
+	text-align: left;
+	
+}
+
+#recoverPasswordForm {
+	display: none;
+}
+
+#loginButton {
+	width: 320px;
+}
+
+#recoverPasswordButton {
+	width: 320px;
+}
+
+.notification {
+	padding: 10px 5px 10px 5px;
+	background: #7cc576;
+	text-align: center;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.notification.confirmation{
+	background: #7cc576;
+	color: #FFF;
+}
+
+.notification.error{
+	background: #f25e4f;
+	color: #FFF;
+}
+
+@media screen and (max-width: 900px){
+    .container {
+    	width: 100%;
+    }
+
+    #banner .food, #banner .info{
+    	clear: right;
+    	margin: 0 auto;
+    	float: none;
+    	padding: 0;
+    }
+
+    #banner .container{
+    	text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 500px){
+
+ 	#banner .info{
+    	width: auto;
+    	padding: 0 20px 0 20px;
+    }
+
+    #banner img{
+    	width: 300px;
+    }
+
+    #banner h1{
+    	font-size: 40px;
+    }
+
+    #banner button{
+    	width: 90%;
+    }
+
+    #register {
+    	margin-bottom: 20px;
+    }
+
+}
+
+
+@media screen and (max-width: 340px){
+	#registerForm input,
+	#registerForm select,
+	#registerForm input[type="submit"], 
+    #loginForm input[type="submit"],
+    #loginForm input,
+    #loginForm select {
+		width: 80%;
+	}
+
+	.container{
+
+	}
+
+}

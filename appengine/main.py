@@ -15,11 +15,16 @@
 # limitations under the License.
 #
 import webapp2
+import os
+import datetime
+from pages import *
+import api
 
-class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.write('Hello world!')
+config = {}
+config['webapp2_extras.sessions'] = {
+    'secret_key': 'j4KLrj43',
+}
 
-app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-], debug=True)
+application = webapp2.WSGIApplication([
+    ('/', Home)
+], debug=True, config=config)

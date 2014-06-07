@@ -1,0 +1,641 @@
+body {
+	font-size: 20px;
+}
+
+#addPost{
+	padding: 15px;
+	background-color: #d98451;
+	color: #fff;
+	margin-top: 20px;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	border: 0;
+	width: 100%;
+	cursor: pointer;
+}
+
+.container{
+	overflow: auto;
+	margin: 0 auto;
+	width: 500px;
+}
+
+
+/* Barra de Pesquisa */
+#search_form{
+	margin-top: 20px;
+	width: 100%;
+	font-size: 18px;
+	font-family: 'Verdana', sans-serif;
+}
+
+.search_textinput{
+	margin: 0;
+	padding: 5px 15px;
+	border:1px solid #d98451; border-right:0px;
+	width: 63%;
+}
+
+.search_button {
+	margin: 0;
+	padding: 5px 15px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	border: solid 1px #d98451; border-right:0px;
+	background: #d98451;
+	background: -webkit-gradient(linear, left top, left bottom, from(#d98451), to(#d98451));
+	background: -moz-linear-gradient(top,  #d98451,  #d98451);
+	width:30%;
+}
+
+.search_button:hover {
+	text-decoration: none;
+	background: #b05b27;
+	background: -webkit-gradient(linear, left top, left bottom, from(#b05b27), to(#b05b27));
+	background: -moz-linear-gradient(top,  #b05b27,  #b05b27);
+}
+
+/* Parte do NewPost */
+#newPost {
+	margin-top: 20px;
+	padding: 20px;
+	text-align: center;
+	margin-bottom: 20px;
+	display: none;
+}
+
+#newPost input{
+	width: 90%;
+	margin: 0 auto;
+	display: block;
+	border: solid 1px #efc296;
+}
+
+#newPost div.fileinputs{
+	width: 95%;
+	position: relative;
+	margin: 0 auto;
+}
+
+#newPost button#addImage{
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: #fff;	
+	background-color: #d98451;
+	padding: 15px;
+	border: 0;
+	width: 100%;
+	cursor: pointer;
+}
+
+#newPost input.file {
+	position: relative;
+	text-align: right;
+	-moz-opacity:0 ;
+	filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
+	cursor: pointer;
+}
+
+#newPost textarea{
+	width: 90%;
+	max-width: 90%;
+	border: solid 1px #efc296;
+	margin: 0 auto;
+	display: block;
+	font-size: 24px;
+	font-family: 'Verdana', sans-serif;
+}
+
+#newPost div.tagsinput{
+	width: 92.5%;
+	height: auto;
+	margin: 20px auto;
+	border: solid 1px #efc296;
+	font-family: 'Verdana', sans-serif;
+}
+
+#newPost input#tags_tag{
+	border: none;
+	font-size: 24px;
+	width: 250px;
+	color: #b3612f;
+	margin-bottom: 5px;
+	font-family: 'Verdana', sans-serif;
+}
+
+#newPost div.tagsinput span.tag, 
+#newPost div.tagsinput span.tag a{
+	border: none;
+	background-color: #d98451;
+	color: #FFF;
+	font-size: 24px;
+	font-family: 'Verdana', sans-serif;
+}
+#newPost .photo{
+	border: solid 1px #efc296;
+	width: 95%;
+	margin: 0 auto;
+	background: #FFF;
+	margin-bottom: 20px;
+}
+
+#newPost .photo img{
+	width: 70%;
+	cursor: pointer;
+}
+
+/* Parte do editPost */
+#editPost {
+	margin-top: 20px;
+	padding: 20px;
+	text-align: center;
+	margin-bottom: 20px;
+	display: none;
+}
+
+#editPost input{
+	width: 90%;
+	margin: 0 auto;
+	display: block;
+	border: solid 1px #efc296;
+}
+
+#editPost div.fileinputs{
+	width: 95%;
+	position: relative;
+	margin: 0 auto;
+}
+
+#editPost button#addImage{
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: #fff;	
+	background-color: #d98451;
+	padding: 15px;
+	border: 0;
+	width: 100%;
+	cursor: pointer;
+}
+
+#editPost input.file {
+	position: relative;
+	text-align: right;
+	-moz-opacity:0 ;
+	filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
+	cursor: pointer;
+}
+
+#editPost textarea{
+	width: 90%;
+	max-width: 90%;
+	border: solid 1px #efc296;
+	margin: 0 auto;
+	display: block;
+	font-size: 24px;
+	font-family: 'Verdana', sans-serif;
+}
+
+#editPost div.tagsinput{
+	width: 92.5%;
+	height: auto;
+	margin: 20px auto;
+	border: solid 1px #efc296;
+	font-family: 'Verdana', sans-serif;
+}
+
+#editPost div.tagsinput span.tag, 
+#editPost div.tagsinput span.tag a{
+	border: none;
+	background-color: #d98451;
+	color: #FFF;
+	font-size: 24px;
+	font-family: 'Verdana', sans-serif;
+}
+#editPost .photo{
+	border: solid 1px #efc296;
+	width: 95%;
+	margin: 0 auto;
+	background: #FFF;
+	margin-bottom: 20px;
+}
+
+#editPost .photo img{
+	width: 70%;
+	cursor: pointer;
+}
+
+#posts {
+	margin-bottom: 20px;
+}
+
+/* Post */
+
+.post {
+	margin-top: 20px;
+	overflow: auto;
+}
+
+.post .inner {
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	overflow: auto;
+}
+
+.post .head{
+	padding: 0 0 10px 0;
+	border-bottom: dashed 1px #efc296;
+	margin-bottom: 20px;
+}
+
+.post .ingredients .ingredient {
+	background: #ffdfbf;
+	width: 100px;
+	padding: 5px;
+	color: #d98451;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.post .authorActions {
+	
+}
+
+.post .deletePost {
+	float: right;
+	cursor: pointer;
+}
+
+.post .content img{
+	float: left;
+	width: 320px;
+}
+
+.post .content .ingredients{
+	margin: 0 0 0 20px;
+	float: left;
+}
+
+
+.post .title{
+	color: #d98451;
+	font-size: 25px;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+
+}
+
+.post .author{
+	color: #999999;
+	font-size: 15px;
+
+}
+
+.post .actions{
+	height: 55px;
+	overflow: auto;
+	clear: left;
+	overflow: hidden;
+}
+
+.post .actions .yummy {
+	background: #D98451;
+	height: 100%;
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+.post .recipe{
+	background: #D98451;
+	height: 40px;
+	text-align: center;
+	cursor: pointer;
+	color: #FFF;
+	font-size: 24px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+}
+
+.post .recipeSection{
+	color: #a09f9e;
+	margin-top: -10px;
+	font-size: 20px;
+	padding: 20px;
+	display: none;
+	overflow: hidden;
+}
+
+.post .actions .comments{
+	background: #FFCF9F;
+	height: 100%;
+	width: 50%;
+	float: right;
+	text-align: center;
+}
+
+
+.post .actions .comments .action .text, 
+.post .recipe .text{
+	color: #d98451;
+}
+
+.post .actions .comments img{
+	margin-top: 7px;
+	margin-right: 5px;
+}
+
+.post .actions div {
+	text-align: center;
+	cursor: pointer;
+}
+
+.post .actions div .action{
+	padding-top: 5px;
+	width: 100px;
+	margin: 0 auto;
+	overflow: auto;
+	text-align: center;
+}
+
+.post .actions div .action img{
+	float: left;
+}
+
+.post .actions div .action .text{
+	float: left;
+	color: #fff;
+	padding-left: 5px;
+	padding-top: 9px;
+}
+
+.post .author a{
+	color: inherit;
+}
+
+
+.post .text_share
+{
+	clear: both;
+	cursor: pointer;
+	padding-top: 10px;
+}
+
+.post .social
+{
+	clear:both;
+	cursor: pointer;
+	padding-top: 10px;
+	display: none;
+}
+
+.post .social .facebook,
+.post .social .google_plus
+{
+	float: left;
+	margin-right: 5px;
+}
+
+#questionPopUp,
+.popup {
+	display: none;
+	background-color: #ffdfbf;
+	text-align: center;
+	padding: 30px 0 30px 0;
+}
+
+#questionPopUp h1,
+.popup h1{
+	font-size: 30px;
+}
+
+
+.notifications {
+	margin-top: 10px;
+}
+
+.notification img {
+	position: relative;
+	height: 20px;
+	width: auto;
+	margin-top: 2px;
+	float: right;
+	margin-right: 15px;
+}
+
+.notification {
+	padding: 10px 5px 10px 5px;
+	background: #7cc576;
+	text-align: center;
+	display: none;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.notification.confirmation{
+	background: #7cc576;
+	color: #FFF;
+}
+
+.notification.error{
+	background: #f25e4f;
+	color: #FFF;
+}
+
+/* Comment Section */
+
+.commentSection {
+	padding: 20px;
+	font-size: 15px;
+	overflow: hidden;
+	display: none;
+}
+
+.commentSection textarea{
+	width: 95%;
+	padding: 2%;
+	border: solid 1px #efc296;
+	font-size: 15px;
+	color: #a9a7a5;
+	margin-top: 10px;
+	font-family: 'Verdana', sans-serif;
+	resize: none;
+}
+
+.commentSection button{
+	float: right;
+	font-size: 15px;
+	border-radius: 0;
+	padding: 5px 15px 5px 15px;
+	background: #ffcf9f;
+	border: none;
+	color: #d98451;
+	cursor: pointer;
+	margin-top: 5px;
+
+}
+
+.commentsUpdates {
+	overflow: auto;
+	clear: right;
+	margin-top: 40px;
+
+}
+
+.commentsUpdates .comment{
+	margin-bottom: 5px;
+	color: #a09f9e;
+	overflow: auto;
+	clear: right;
+}
+
+.commentsUpdates .comment .time{
+	font-size: 12px;
+}
+
+.commentsUpdates .comment .author{
+	font-size: 12px;
+	margin-right: 5px;
+	color: #d98451;
+}
+
+
+.commentsUpdates .comment .commentText{
+	font-size: 12px;
+	font-weight: none;
+}
+
+.commentsUpdates .comment .commentText img{
+	width: 30px;
+	height: auto;
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+
+.commentsUpdates .comment .delete{
+	font-size: 12px;
+	text-decoration: underline;
+	color: #d98451;
+	cursor: pointer;
+}
+
+.commentsUpdates .comment .delete:hover{
+	color: #FF0000;
+}
+
+
+@media screen and (max-width: 500px){
+    .container {
+    	width: auto;
+    	padding: 0 20px 0 20px ;
+    }
+
+    #newPost input{
+		width: 90%;
+	}
+
+	#newPost img{
+		width: 92%;
+	}
+
+	.post img{
+		max-width:100%; 
+		max-height:100%;
+		clear: right;
+		float: none;
+	}
+
+	.post .content .ingredients{
+		margin: 0 0 0 0;
+		padding-top: 10px;
+		float: none;
+		overflow: auto;
+		clear: left;
+	}
+
+	.post .content .ingredients .ingredient{
+		float: left;
+		margin-right: 10px;
+		margin-top: 5px;
+	}
+
+	/* Adapt Yummy */
+
+	.post .actions div .action .text{
+		
+	}
+
+	.post .actions div .action {
+		text-align: center;
+		width: auto;
+		margin-left:30px;
+	}
+	.post .actions div .action img {
+		float: left;
+	}
+
+	/* Question Popup */
+	#questionPopUp {
+		width: 80%;
+	}
+
+	#questionPopUp input {
+		width: 90%;
+	}
+
+}
+
+@media screen and (max-width: 400px){
+
+
+  .post .content .ingredients .ingredient{
+		width: 90%; 
+	}
+
+	#newPost button#addImage{
+		font-size: 19px;
+	}
+	
+	#search_form {
+		font-size: 19px;
+
+	}
+	
+	.search_textinput {
+		font-size: 14px;
+		width: 53%;
+	}
+	
+	.search_button {
+		font-size: 14px;
+		width: 35%;
+	}
+	
+	
+
+}
+
