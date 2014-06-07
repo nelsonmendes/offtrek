@@ -46,10 +46,6 @@ $(document).ready(function(){
 	$('#publishPost').click(function(){
 		publishPostClick();
 	});
-	
-	$('.recoverPasswordButton').click(function(){
-		recoverPasswordPopUp();
-	});
 
 	$('.deletePost').click(function(){
 		deletePostClick(this);

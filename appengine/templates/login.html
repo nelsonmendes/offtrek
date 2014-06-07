@@ -68,17 +68,9 @@
               <div id="passwordLoginAlert" class="alert"></div>
               <input type="password" name="password" placeholder="password"/><br/>
               <input id="loginButton" type="submit" value="Login" class="orange"/><br/>
-              <input id="recoverPasswordButton" type="button" class="recoverPasswordButton blue" value="Recover Password"></input>
+              <input id="register" type="button" class="recoverPasswordButton blue" value="Register"></input>
             </form>
           </div>
-        </div>
-        <!-- Recover Password Form -->
-        <div id="recoverPasswordForm">
-          <form action="send_recover" onsubmit="return validateEmail()" method="post">
-            <div id="recoverPasswordAlert" class="alert"></div>
-            <input type="email" name="emailToRecover" placeholder="user@email.com"/><br />
-            <input type="submit" value="Recuperar" class="orange"/>
-          </form>
         </div>
       </div>
     </div>
