@@ -3,6 +3,7 @@ import webapp2
 import cgi
 import datetime
 import os
+import time
 from base_handler import *
 from datastore import *
 
@@ -11,25 +12,23 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-class Feed(BaseHandler):
+class SearchResults(BaseHandler):
 
     def get(self):
         if(self.isLoggedIn()):
-            user_id = int(self.get_session_user_id())
-            posts = getPostsByUserFollowing(user_id)
-            posts = posts + getPostsByUser(user_id)
-            posts = sorted(posts, key = lambda post: post.original_date, reverse=True)
-            is_admin = searchUserByID(user_id).admin
+            term = self.request.get("term")
+            posts = searchPosts(term)
+            users = searchUsers(term)
             
+            user_id = int(self.get_session_user_id())
             # Get post yummis
-            def putLikes(post):
-                post_user_id = post.user.key().id()
+            def putYummys(post):
                 post_id = post.key().id()
-                yummys = getPostLikes(post_id)
-                post.likes = len(likes)
-                post.likeDone = LikesDone(user_id, post_id)
+                yummys = getPostYummys(post_id)
+                post.yummys = len(yummys)
+                post.yummyDone = YummyDone(user_id, post_id)
                 return post
-
+    
             # Get post comments
             def putComments(post):
                 post_id = post.key().id()
@@ -37,19 +36,17 @@ class Feed(BaseHandler):
                 post.comments = sorted(comments, key=lambda c: c.date, reverse=True)
                 post.commentsNumber = len(comments)
                 return post
-
-            
-
-            posts = map(putLikes, posts)
+    
+            posts = map(putYummys, posts)
             posts = map(putComments, posts)
-
             template_values = {
-                "posts" : posts,
+                "term" : term,
+                "posts": posts,
+                "users": users,
                 "user_email" : self.session.get("user"),
-                "is_admin" : is_admin,
-                "user_id" : self.get_session_user_id()
+                "user_id" : self.session.get("user_id")
             }
-            template = JINJA_ENVIRONMENT.get_template('feed.html')
+            template = JINJA_ENVIRONMENT.get_template('search.html')
             self.response.write(template.render(template_values))
         else:
             return self.redirect('/')
