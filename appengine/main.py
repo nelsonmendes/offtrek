@@ -28,5 +28,7 @@ config['webapp2_extras.sessions'] = {
 application = webapp2.WSGIApplication([
     ('/', Home),
     ('/login',Login),
-    ('/post',Post)
+    ('/post',Post),
+    ('/register',Register),
+    ('/register_handler',RegisterHandler)
 ], debug=True, config=config)
