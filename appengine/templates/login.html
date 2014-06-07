@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Foodrific</title>
+    <title>Offtrek</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -23,7 +23,7 @@
       <div class="container">
         <div id="loginForm">
           <div class="container">
-            <h1>Entrar</h1>
+            <h1>Login</h1>
             {% if message != '' %}
               <div class="notification error">
                   {{ message }}
@@ -31,11 +31,11 @@
             {% endif %}
             <form action="login_handler" method="post" onsubmit="return validateLoginForm()">
               <div id="emailLoginAlert" class="alert"></div>
-              <input type="text" name="email" placeholder="escreve o teu email.."/><br/>
+              <input type="text" name="email" placeholder="email"/><br/>
               <div id="passwordLoginAlert" class="alert"></div>
-              <input type="password" name="password" placeholder="escreve a tua password"/><br/>
-              <input id="loginButton" type="submit" value="Entrar" class="orange"/><br/>
-              <input id="recoverPasswordButton" type="button" class="recoverPasswordButton blue" value="Recuperar password"></input>
+              <input type="password" name="password" placeholder="password"/><br/>
+              <input id="loginButton" type="submit" value="Login" class="orange"/><br/>
+              <input id="recoverPasswordButton" type="button" class="recoverPasswordButton blue" value="Recover Password"></input>
             </form>
           </div>
         </div>
@@ -43,7 +43,7 @@
         <div id="recoverPasswordForm">
           <form action="send_recover" onsubmit="return validateEmail()" method="post">
             <div id="recoverPasswordAlert" class="alert"></div>
-            <input type="email" name="emailToRecover" placeholder="Introduzir e-mail..."/><br />
+            <input type="email" name="emailToRecover" placeholder="user@email.com"/><br />
             <input type="submit" value="Recuperar" class="orange"/>
           </form>
         </div>
