@@ -1,0 +1,58 @@
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Offtrek</title>
+        <meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">     
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link href="css/index.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/bPopup.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.js"></script>
+    <script src="js/jquery.tagsinput.js"></script>
+    <link href="css/login.css" rel="stylesheet">
+    </head>
+
+
+    <body  >
+
+<div id="wrap">
+
+<header class="masthead">
+    <div id="login_container" class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1><a href="/" title="Bootstrap Template">Offtrek</a>
+          <p class="lead"></p></h1>
+      </div>
+      <div class="col-sm-6">
+        <div class="pull-right  hidden-xs">
+          <a href="./login" class=""><h3><i class="glyphicon glyphicon-user"></i></h3></a>
+        </div>
+      </div>
+    </div>
+    </div>
+</header>
+
+
+<!-- Fixed navbar -->
+<div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+    </div><!--/.container -->
+</div><!--/.navbar -->
+  <body>
+    {% for post in posts %}
+    {% endfor %}
+  </body>
+</html>

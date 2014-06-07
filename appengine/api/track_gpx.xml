@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" >
+    <metadata>
+        <name>Test file</name>
+		<author>me</author>
+    </metadata>
+    <trk>
+        <name>my Track</name>
+        <trkseg>
+            <trkpt lon="9.860624216140083" lat="54.9328621088893">
+                <ele>0.0</ele>
+				<time> 07/06/2014 20.45 </time>
+				 <name>Position 1</name>
+				 <link>link_pa_uma_foto</link>
+				 <desc>troço muito dificil</desc>
+            </trkpt>
+            <trkpt lon="9.86092208681491" lat="54.93293237320851">
+                <ele>0.0</ele>
+				<time> 07/06/2014 20.47 </time>
+			    <name>Position 2</name>
+            </trkpt>
+            <trkpt lon="9.86187816543752" lat="54.93327743521187">
+                <ele>0.0</ele>
+				<time> 07/06/2014 20.48 </time>
+				<name>Position 3</name>
+            </trkpt>
+            <trkpt lon="9.862439849679859" lat="54.93342326167919">
+                <ele>0.0</ele>
+				<time> 07/06/2014 20.49 </time>
+                <name>Position 4</name>
+            </trkpt>
+        </trkseg>
+    </trk>
+</gpx>
