@@ -72,7 +72,7 @@
 #registerForm input[type="submit"], 
 #loginForm input[type="submit"],
 #passwordForm input[type="submit"]{
-	width: 320px;
+	width: 300px;
 }
 
 #editName, #editEmail, #editBirthday, #editGender,
@@ -86,7 +86,7 @@
 #registerForm .alert,
 #loginForm .alert,
 #passwordForm .alert{
-	width: 320px;
+	width: 300px;
 	margin: 0 auto;
 	text-align: left;
 	
@@ -97,11 +97,11 @@
 }
 
 #loginButton {
-	width: 320px;
+	width: 300px;
 }
 
 #recoverPasswordButton {
-	width: 320px;
+	width: 300px;
 }
 
 .notification {
