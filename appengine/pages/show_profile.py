@@ -34,7 +34,7 @@ class ShowProfile(BaseHandler):
                 "p_gender" : gender,
                 "user_id" : self.get_session_user_id()
             }
-            template = JINJA_ENVIRONMENT.get_template('profile.html')
+            template = JINJA_ENVIRONMENT.get_template('show_profile.html')
             self.response.write(template.render(template_values))
         else:
             return self.redirect('/')
