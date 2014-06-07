@@ -10,10 +10,10 @@ STANDARD_WIDTH = 800
 class Post(db.Model):
 	user = db.ReferenceProperty(User, required=True)
 	title = db.StringProperty(required=True)
-	photo = db.BlobProperty(required=True)
+	photo = db.BlobProperty()
 	rating = db.RatingProperty()
-	recipe = db.TextProperty()
-	ingredients = db.ListProperty(str)
+	description = db.TextProperty()
+	tags = db.ListProperty(str)
 	original_date = db.DateTimeProperty(auto_now_add=True)
 	last_update_date = db.DateTimeProperty(auto_now=True)
 
@@ -35,19 +35,19 @@ def addPost(user, title, photo):
 		return None
 		
 
-def addIngredients(post_id, ingredients):
+def addTags(post_id, tags):
 	post = Post.get_by_id(post_id)
-	if (post != None and len(ingredients) > 0):
-		post.ingredients.extend(ingredients)
+	if (post != None and len(tags) > 0):
+		post.tags.extend(tags)
 		post.put()
 		return True
 	else:
 		return False
 	
-def addRecipe(post_id, recipe):
+def addDescription(post_id, description):
 	post = Post.get_by_id(post_id)
 	if (post != None):
-		post.recipe = recipe
+		post.description = description
 		post.put()
 		return True
 	else:
@@ -93,7 +93,7 @@ def deletePost(post_id):
 	db.delete(post_to_delete)
 	return True
 
-def editPost(post_id, title, photo, recipe, ingredients):
+def editPost(post_id, title, photo, description, tags):
 	post_to_change = Post.get_by_id(post_id)
 	if(post_to_change is not None):
 		post_to_change.title = title
@@ -104,9 +104,9 @@ def editPost(post_id, title, photo, recipe, ingredients):
 			size = len(photo)/1024
 			if size < 1000 and size > 0: 
 				post_to_change.photo = photo
-		if(len(recipe) > 0):
-			post_to_change.recipe = recipe
-		post_to_change.ingredients = ingredients
+		if(len(description) > 0):
+			post_to_change.description = description
+		post_to_change.tags = tags
 		post_to_change.put()
 		return True
 	else:
