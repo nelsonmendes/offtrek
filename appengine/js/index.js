@@ -1,29 +1,29 @@
 
-        $(document).ready(function() {
+$(document).ready(function() {
 
-            /* affix the navbar after scroll below header */
-$('#nav').affix({
-      offset: {
-        top: $('header').height()-$('#nav').height()
-      }
-});
+  /* affix the navbar after scroll below header */
+  $('#nav').affix({
+    offset: {
+      top: $('header').height()-$('#nav').height()
+    }
+  });
 
-/* highlight the top nav as scrolling occurs */
-$('body').scrollspy({ target: '#nav' })
+  /* highlight the top nav as scrolling occurs */
+  $('body').scrollspy({ target: '#nav' })
 
-/* smooth scrolling for scroll to top */
-$('.scroll-top').click(function(){
-  $('body,html').animate({scrollTop:0},1000);
-})
+  /* smooth scrolling for scroll to top */
+  $('.scroll-top').click(function(){
+    $('body,html').animate({scrollTop:0},1000);
+  })
 
-/* smooth scrolling for nav sections */
-$('#nav .navbar-nav li>a').click(function(){
-  var link = $(this).attr('href');
-  var posi = $(link).offset().top+20;
-  $('body,html').animate({scrollTop:posi},700);
-})
+  /* smooth scrolling for nav sections */
+  $('#nav .navbar-nav li>a').click(function(){
+    var link = $(this).attr('href');
+    var posi = $(link).offset().top+20;
+    $('body,html').animate({scrollTop:posi},700);
+  })
 
-/* google maps */
+  /* google maps */
 
 // enable the visual refresh
 google.maps.visualRefresh = true;
@@ -35,24 +35,24 @@ function initialize() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
+    mapOptions);
   	// try HTML5 geolocation
-  if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = new google.maps.LatLng(position.coords.latitude,
-                                       position.coords.longitude);
+    if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = new google.maps.LatLng(position.coords.latitude,
+         position.coords.longitude);
 
-      var infowindow = new google.maps.InfoWindow({
-        map: map,
-        position: pos,
-        content: 'You are Here'
+        var infowindow = new google.maps.InfoWindow({
+          map: map,
+          position: pos,
+          content: 'You are Here'
+        });
+
+        map.setCenter(pos);
+      }, function() {
+        handleNoGeolocation(true);
       });
-
-      map.setCenter(pos);
-    }, function() {
-      handleNoGeolocation(true);
-    });
-  } else {
+    } else {
     // browser doesn't support geolocation
     handleNoGeolocation(false);
   }
@@ -78,4 +78,4 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
-        });
+});
