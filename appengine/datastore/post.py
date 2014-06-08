@@ -11,6 +11,7 @@ class Post(db.Model):
 	user = db.ReferenceProperty(User, required=True)
 	title = db.StringProperty(required=True)
 	photo = db.BlobProperty()
+	xml = db.TextProperty()
 	rating = db.RatingProperty()
 	description = db.TextProperty()
 	tags = db.ListProperty(str)
@@ -19,9 +20,9 @@ class Post(db.Model):
 
 
 # ----------------- FUNCTIONS POST -----------------
-def addPost(user, title, photo):
+def addPost(user, title, photo, xml):
 	try:
-		post = Post(user=user, title=title)
+		post = Post(user=user, title=title, xml=xml)
 		post.put()
 		return post.key().id()
 		

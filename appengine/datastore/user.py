@@ -24,10 +24,6 @@ def addUser(name, email, password, gender, birthday):
         encrypted_pw = encrypt(password)
         user = User(name=name, email=email, password=encrypted_pw, gender=gender, birthday=birthday, admin=False)
         user.put()
-        sender_address = "offtrek@gmail.com"
-        subject = "Welcome to offtrek!"
-        body = "Hello.\n\nWelcome to offtrek! You can now record your offroad adventures!\ngo now to: http://offtrek.appspot.com .\n\nThe Offtrek Team."
-        mail.send_mail(sender_address, email, subject, body)
         return user.key().id()
     else:
         return False
@@ -177,10 +173,6 @@ def generateUserRecoveryToken(email):
     if user_query is not None:
         user_value = user_query.get()
         user_value.token = encrypt(user_value.email + str(randint(1, maxLimit)))
-        sender_address = "foodrific.service@gmail.com"
-        subject = "Recuperacao de password"
-        body = "Ola.\n\nEfetuaste um pedido de recuperacao de password. Para prosseguir acede a http://foodrific.appspot.com/recovery?token=" + user_value.token + " .\n\nA equipa Foodrific."
-        mail.send_mail(sender_address, email, subject, body)
         db.put(user_value)
         return True
     else:
