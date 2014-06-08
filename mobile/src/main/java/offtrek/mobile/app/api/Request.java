@@ -1,7 +1,9 @@
 package offtrek.mobile.app.api;
 
 
+import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -14,16 +16,19 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URLEncoder;
 import java.security.InvalidParameterException;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Request{
@@ -34,8 +39,6 @@ public abstract class Request{
                                                                                                                     IllegalStateException,
                                                                                                                     IOException,
                                                                                                                     JSONException {
-
-
         HttpClient httpclient = new DefaultHttpClient();
         HttpResponse response = null;
 
@@ -84,21 +87,60 @@ public abstract class Request{
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        if (response == null || response.getStatusLine().getStatusCode() != 200) {
-            HttpEntity responseEntity = response.getEntity();
-            if(responseEntity!=null) {
-                Log.i("Request.doRequest", EntityUtils.toString(responseEntity));
-            }
-            throw new IllegalArgumentException();
+        String json = "null";
+        if (response == null) {
+            Log.i("Request.doRequest", "Response is null");
+        }else{
+           if(response.getStatusLine().getStatusCode() != 200) {
+               HttpEntity responseEntity = response.getEntity();
+               if (responseEntity != null) {
+                   Log.i("Request.doRequest", EntityUtils.toString(responseEntity));
+               }
+               throw new IllegalArgumentException();
+           }
+            BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+            json = in.readLine();
         }
 
-        BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-        String json = in.readLine();
         return new JSONObject(json);
     }
 
 
+    public static void send_GPX(final String  data) {
+
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params) {
+
+                List<NameValuePair> variables = new ArrayList<>();
+                variables.add(new BasicNameValuePair("gpx", data));
+
+                try {
+                    Log.i("HTTP_Request", "Sending");
+                    JSONObject result = Request.doRequest(Request.URLs.API_ROOT_URL.getUrl() + "test.php", Request.RequestType.POST, variables);
+                    Log.i("HTTP_Request", "Got result: " + result.toString());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void result) {
+
+
+            }
+        }.execute();
+
+
+    }
+
+    public static boolean sendXML(){
+
+        return true;
+    }
 
     public enum RequestType{
         POST,
@@ -108,8 +150,7 @@ public abstract class Request{
     }
 
     public enum URLs{
-
-        API_ROOT_URL("https://paginas.fe.up.pt/~ei09144/LAPD/api/");
+        API_ROOT_URL("http://10.1.1.106:8080/web/offtrek/api/");
 
 
         private String url;

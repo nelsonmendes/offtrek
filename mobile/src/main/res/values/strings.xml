@@ -9,5 +9,7 @@
     <string name="GPS_Capture_Start">Start</string>
     <string name="GPS_Capture_Stop">Stop</string>
     <string name="SendRequest">Send HTTP</string>
+    <string name="SaveRoute">Save route</string>
+    <string name="GPS_tracking_toggle_description">ImageView that acts as a button to toggle GPS tracking</string>
 
 </resources>

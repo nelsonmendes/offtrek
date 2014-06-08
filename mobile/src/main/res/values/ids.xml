@@ -3,4 +3,8 @@
     <item name="startButton" type="id">start_button</item>
     <item name="stopButton" type="id">stop_button</item>
     <item name="httpRequestButton" type="id">send_http_request_button</item>
+    <item name="GPS_TrackingToggleView" type="id">gps_tracking_toggle_image_button</item>
+    <item name="centerSectionLabel" type="id">center_section_label</item>
+    <item name="leftSectionLabel" type="id">left_section_label</item>
+    <item name="rightSectionLabel" type="id">right_section_label</item>
 </resources>

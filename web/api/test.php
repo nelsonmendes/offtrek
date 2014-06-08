@@ -1,14 +1,20 @@
-<?
+<?php
+	header('Content-type: application/json');
 
-	if(isset($_GET['coords'])){
-	
-		echo "<h1>THIS IS WHAT WAS RECORDED - GET</h1>";
-		echo '<p>' . $_GET["coords"] . '</p>';
-	}
+	$result = array();
+
 	if(isset($_POST['coords'])){
-	
-		echo "<h1>THIS IS WHAT WAS RECORDED - POST</h1>";
-		echo '<p>' . $_POST["coords"] . '</p>';
+
+		$result['coord'] = $_POST['coords'];
+		echo json_encode($result);
+	}else{
+		$result['coord'] = 'FAILURE';
+		echo json_encode($result);
 	}
+	
+
 
 ?>
+
+
+
