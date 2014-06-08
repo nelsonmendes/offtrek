@@ -463,7 +463,7 @@ function showShareIcons(id_post){
 
 function readImageURL(input) 
 {
-	var imgVal = $('#uploadImage').val();
+	/*var imgVal = $('#uploadImage').val();
 
 	$("#photoAlert").html("");
 	var extension = imgVal.substring(imgVal.lastIndexOf('.') + 1).toLowerCase();
@@ -482,7 +482,7 @@ function readImageURL(input)
         reader.readAsDataURL(input.files[0]);
     }else{
     	$('#foodImage').attr('src', 'images/post-photo.svg');
-    }    
+    }    */
 }
 
 function readImageURLEdit(input, id_post) 
@@ -528,7 +528,7 @@ function validatePublishPost(){
 		$("#titleAlert").html("Escreva um título!").effect("shake");
 		return false;
 	}
-	var imgVal = $('#uploadImage').val();
+	/*var imgVal = $('#uploadImage').val();
 	
 	if(imgVal=='') 
     { 
@@ -540,7 +540,7 @@ function validatePublishPost(){
     {
     	$("#photoAlert").html("Insira uma imagem válida!").effect("shake");
     	return false;
-    }
+    }*/
 }
 
 function validateEditPost(id_post)
