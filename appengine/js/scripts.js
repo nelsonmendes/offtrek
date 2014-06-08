@@ -259,6 +259,7 @@ function validateEditPasswordForm(){
 }
 
 function passwordIsValid(password){
+	password = CryptoJS.SHA256(password);
 	$.ajaxSetup( { "async": false } );
      var data = $.getJSON("api/verifyPassword",{
             password: password
@@ -434,6 +435,8 @@ function emailDatabaseIsValid(email)
 }
 
 function loginIsValid(email, password){
+	 password = CryptoJS.SHA256(password);
+	 console.log(password);
 	 $.ajaxSetup( { "async": false } );
      var data = $.getJSON("api/login",{
             email: email,
