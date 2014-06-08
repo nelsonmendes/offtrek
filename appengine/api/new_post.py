@@ -17,9 +17,9 @@ class NewPost(BaseHandler):
 		user = searchUserByEmail(email)
 		postId = addPost(user, title, photo)
 		if postId is not None:
-			addIngredients(postId, ingredients)
+			"""addIngredients(postId, ingredients)
 			for ing in ingredients:
-				addIngredient(ing,None)
+				addIngredient(ing,None)"""
 			if len(recipe) > 0:
 				addRecipe(postId,recipe)
 		return self.redirect('/')

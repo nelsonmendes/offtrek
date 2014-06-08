@@ -13,6 +13,7 @@
     <script src="js/scripts.js"></script>
     <script src="js/bPopup.js"></script>
     <script src="js/jquery.tagsinput.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="images/icon-ipad.png" />
   </head>
@@ -69,16 +70,11 @@
                   {% endif %}
                 {% endif %}
                 <div class="head">
-                  <span class="title">{{post.title}}</span><br/>
+                  <span class="title"><a href="post?id={{post.key().id()}}">{{post.title}}</a></span><br/>
                   <span class="author">por <a href="profile?user={{post.user.key().id()}}">{{post.user.name}}</a></span><br/>
                 </div>
                 <div class="content">
-                  <img src="/api/postimage?id={{post.key().id()}}" />
-                  <div class="ingredients">
-                    {% for ingredient in post.ingredients %}
-                      <div class="ingredient"> {{ ingredient }}</div>
-                    {% endfor %}
-                  </div>
+                 
                 </div>
                 <div class="text_share">
                   <img src="images/share.svg" height="25px">
@@ -94,46 +90,7 @@
                     <img src="images/twitter.svg" height="35px" onclick="shareTwitter({{post.key().id()}});">
                   </div>
                 </div>
-              </div>
-              {% if post.recipe != None %}
-              <div class="recipe">Ver Receita</div>                
-              <div class="recipeSection">{{post.recipe}}</div>
-              {% endif %}
-              <div class="actions">
-                <div class="yummy yummyAction" id="{% if post.yummyDone %}done{% else %}undone{% endif %}">
-                  <div class="action">
-                    {% if post.yummyDone %}
-                    <img src="images/yummy-done.svg" height="45px">
-                    {% else %}
-                    <img src="images/yummy.svg" height="45px">
-                    {% endif %}
-                    <div class="text">{{post.yummys}}
-                    </div>
-                  </div>
-                </div>
-                <div class="comments">
-                  <div class="action">
-                    <img src="images/comments.svg" height="35px">
-                    <div class="text">{{post.commentsNumber}}</div>
-                  </div>
-                </div>
-              </div>
-              <div class="commentSection">
-                <textarea name="commentary" placeholder="Escrever comentário..." maxlength="500"></textarea>
-                <button class="addComment">comentar</button>
-                <div class="commentsUpdates">
-                  {% for comment in post.comments %}
-                  <div class="comment" id="{{comment.key().id()}}">
-                    <div class="commentText"><a href="profile?user={{comment.user.key().id()}}"><img src="api/get_avatar?email={{comment.user.email}}"></a><span class="author">{{comment.user.name}}</span><span>{{comment.content}}</span></div>
-                    <span class="time">{{comment.date.strftime("%d/%m/%y %H:%M")}}</span>  
-                    {% if user_email == comment.user.email or is_admin == True or post.user.email == user_email %}
-                      <span class="delete">eliminar</span>
-                    {% endif %}
-                  </div>
-                  <br/>
-                  {% endfor %}
-                </div>
-              </div>
+              </div>              
             </div>
             <div id="editPost" class="box editPost{{post.key().id()}}"></div>
           {% endfor %}

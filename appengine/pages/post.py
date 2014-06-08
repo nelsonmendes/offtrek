@@ -21,9 +21,9 @@ class PostPage(BaseHandler):
             user_id = int(self.get_session_user_id())
             is_admin = searchUserByID(user_id).admin
             
-            yummys = getPostYummys(post_id)
-            post.yummys = len(yummys)
-            post.yummyDone = YummyDone(user_id, post_id)
+            likes = getPostLikes(post_id)
+            post.likes = len(likes)
+            post.likesDone = LikeDone(user_id, post_id)
            
             comments = getCommentsForPost(post_id)
             post.comments = sorted(comments, key=lambda c: c.date, reverse=True)
