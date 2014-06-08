@@ -21,16 +21,10 @@ class Post(db.Model):
 # ----------------- FUNCTIONS POST -----------------
 def addPost(user, title, photo):
 	try:
-		image = images.Image(db.Blob(photo))
-		image.resize(width=STANDARD_WIDTH)
-		photo = image.execute_transforms(output_encoding=images.JPEG)
-		size = len(photo)
-		if size < 1000*1024 and size > 0: 
-			post = Post(user=user, title=title, photo=photo)
-			post.put()
-			return post.key().id()
-		else:
-			return None
+		post = Post(user=user, title=title)
+		post.put()
+		return post.key().id()
+		
 	except TypeError, e:
 		return None
 		
