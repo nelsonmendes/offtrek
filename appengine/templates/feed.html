@@ -66,8 +66,8 @@
     </div>
 	  </form>
     </div>
-      <button id="addPost">novo post</button>
-      <!-- New Post -->
+      <!-- <button id="addPost">novo post</button>
+      
       <div id="newPost" class="box">
         <form id="newpost" method="post" action="api/newpost" onsubmit="return validatePublishPost()" enctype="multipart/form-data">
           <div class="alert" id="titleAlert"></div>
@@ -85,35 +85,34 @@
           <textarea name="recipe" placeholder="Qual é a receita?" rows="3" cols="50" form="newpost"></textarea> <br/>
           <input type="submit" value="Publicar" class="orange"/>
         </form>
-      </div>
+      </div> -->
       <!-- Notifications -->
-      <div class="notifications">
-      </div>
+     
       <!-- Posts -->
-      <div id="posts">
+      <div id="container" style="margin-top:50px">
           {% for post in posts %}
-            <div class="post box" id="{{post.key().id()}}">
-              <div class="inner">
-                {% if user_email == post.user.email %}
-                  <div class="authorActions">
-                    <img class="editPost" src="images/edit_post.svg" alt="Editar Prato" width="20" height="20" style="cursor:pointer"/>
+            <div class="row" id="{{post.key().id()}}">
+              <div class="col-sm-12">
+                <div class="row posts">
+                  <div class="col-sm-3"></div>
+                  <span class="col-sm-3"><a href="post?id={{post.key().id()}}">{{post.title}}</a></span>
+                  <span class="col-sm-3">By <a href="profile?user={{post.user.key().id()}}">{{post.user.name}}</a></span>
+                  {% if user_email == post.user.email %}
+                  <div class="col-sm-3">
                     <img class="deletePost" src="images/delete.svg" alt="Apagar Prato" width="20" height="20"/>
                   </div>
                 {% else %}
                   {% if is_admin == True %}
-                    <div class="authorActions">
+                    <div class="col-sm-3">
                       <img class="deletePost" src="images/delete.svg" alt="Apagar Prato" width="20" height="20"/>
                     </div>
                   {% endif %}
                 {% endif %}
-                <div class="head">
-                  <span class="title"><a href="post?id={{post.key().id()}}">{{post.title}}</a></span><br/>
-                  <span class="author">por <a href="profile?user={{post.user.key().id()}}">{{post.user.name}}</a></span><br/>
                 </div>
                 <div class="content">
                  
                 </div>
-                <div class="text_share">
+                <!-- <div class="text_share">
                   <img src="images/share.svg" height="25px">
                 </div>
                 <div class="social"> 
@@ -127,9 +126,8 @@
                     <img src="images/twitter.svg" height="35px" onclick="shareTwitter({{post.key().id()}});">
                   </div>
                 </div>
-              </div>              
+              </div>  -->             
             </div>
-            <div id="editPost" class="box editPost{{post.key().id()}}"></div>
           {% endfor %}
       </div>
 

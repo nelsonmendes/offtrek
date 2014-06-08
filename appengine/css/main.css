@@ -40,7 +40,7 @@ background: 0 0;
 }
 
 h1 {
-	color: #4c3a30;
+	color: #000000;
 	font-size: 58px;
 }
 
@@ -149,7 +149,7 @@ button.blue:hover{
 #deleteUserPopUp,
 .popup {
 	display: none;
-	background-color: #ffdfbf;
+	background-color: #7C8C66;
 	text-align: center;
 	padding: 30px 0 30px 0;
 }
@@ -185,4 +185,8 @@ button.blue:hover{
 #search_input{
 	width: 100%;
 	text-align: center;
+}
+.posts{
+	min-height: 50px;
+	font-size: 20px;
 }
