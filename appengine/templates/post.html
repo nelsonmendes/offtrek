@@ -6,8 +6,12 @@
 <meta name="viewport" content="initial-scale=1, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="css/jquery.tagsinput.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.3.custom.min.css" />
+
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/feed.css">
+<link rel="stylesheet" type="text/css" href="css/home.css">
+<link href="css/index.css" rel="stylesheet">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
 <script src="js/scripts.js"></script>
@@ -16,19 +20,50 @@
 <link rel="icon" type="image/png" href="images/favicon.png" />
 <link rel="apple-touch-icon" sizes="72x72" href="images/icon-ipad.png" />
 </head>
-<body>
-	<div id="header">
-      <a id="profileButton" href="profile?user={{user_id}}"><img src="api/get_avatar?email={{user_email}}" height="30px"/></a>
-      <a href="/"><img src="images/logo-white.svg" height="50px" /></a>
-      <a id="logoutButton" href="/logout"><img src="images/logout.svg" height="25px" /></a>
+  <header class="masthead">
+    <div id="login_container" class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1><a href="/" title="Bootstrap Template">Offtrek</a>
+          <p class="lead"></p></h1>
+      </div>
+      <div class="col-sm-4"></div>
+      <div class="col-sm-2">
+        <div class="pull-right  hidden-xs">
+          <a id="profileButton" href="profile?user={{user_id}}"><img src="api/get_avatar?email={{user_email}}" height="70px"/></a>
+        </div>
+      </div>
     </div>
+    </div>
+</header>
+
+
+<!-- Fixed navbar -->
+<div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav nav-justified">
+          <li><a href="profile?user={{user_id}}">Perfil</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container -->
+</div><!--/.navbar -->
+<body>
 	<div class="container">
 		<div id="posts">
 			<div class="post box" id="{{post.key().id()}}">
 			  <div class="inner">
 			    {% if user_email == post.user.email %}
 			      <div class="authorActions">
-			        <img class="editPost" src="images/edit_post.svg" alt="Editar Prato" width="20" height="20" style="cursor:pointer"/>
+			        
 			        <img class="deletePost" src="images/delete.svg" alt="Apagar Prato" width="20" height="20"/>
 			      </div>
 			    {% else %}
@@ -51,8 +86,7 @@
 			      </div>
 			    </div>
 			  </div>
-			  {% if post.recipe != None %}
-              <div class="recipe">Ver Receita</div>                
+			  {% if post.recipe != None %}              
               <div class="recipeSection">{{post.recipe}}</div>
               {% endif %}
               <div class="actions">
@@ -61,7 +95,7 @@
                     {% if post.yummyDone %}
                     <img src="images/yummy-done.svg" height="45px">
                     {% else %}
-                    <img src="images/yummy.svg" height="45px">
+                    <img src="images/like.svg" height="45px">
                     {% endif %}
                     <div class="text">{{post.yummys}}
                     </div>

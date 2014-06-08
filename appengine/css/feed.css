@@ -265,7 +265,6 @@ body {
 
 .post .head{
 	padding: 0 0 10px 0;
-	border-bottom: dashed 1px #efc296;
 	margin-bottom: 20px;
 }
 
@@ -299,8 +298,8 @@ body {
 
 
 .post .title{
-	color: #d98451;
-	font-size: 25px;
+	color:  #000000;;
+	font-size: 30px;
 	font-weight: bold;
 	margin: 0;
 	padding: 0;
@@ -309,7 +308,7 @@ body {
 }
 
 .post .author{
-	color: #999999;
+	color: #000000;;
 	font-size: 15px;
 
 }
@@ -322,7 +321,9 @@ body {
 }
 
 .post .actions .yummy {
-	background: #D98451;
+	background-color: #4C4C4C;
+color: #FFF;
+border: solid 1px #3D3D36;
 	height: 100%;
 	width: 50%;
 	float: left;
@@ -349,7 +350,7 @@ body {
 }
 
 .post .actions .comments{
-	background: #FFCF9F;
+	background-color: #727272;
 	height: 100%;
 	width: 50%;
 	float: right;
@@ -477,7 +478,7 @@ body {
 .commentSection textarea{
 	width: 95%;
 	padding: 2%;
-	border: solid 1px #efc296;
+	border: solid 1px #000000;
 	font-size: 15px;
 	color: #a9a7a5;
 	margin-top: 10px;
@@ -495,7 +496,9 @@ body {
 	color: #d98451;
 	cursor: pointer;
 	margin-top: 5px;
-
+	background-color: #4C4C4C;
+color: #FFF;
+border: solid 1px #3D3D36;
 }
 
 .commentsUpdates {
@@ -507,7 +510,7 @@ body {
 
 .commentsUpdates .comment{
 	margin-bottom: 5px;
-	color: #a09f9e;
+	color: #000000;
 	overflow: auto;
 	clear: right;
 }
@@ -519,7 +522,7 @@ body {
 .commentsUpdates .comment .author{
 	font-size: 12px;
 	margin-right: 5px;
-	color: #d98451;
+	color: #428bca;
 }
 
 
@@ -539,7 +542,7 @@ body {
 .commentsUpdates .comment .delete{
 	font-size: 12px;
 	text-decoration: underline;
-	color: #d98451;
+	color: #428bca;
 	cursor: pointer;
 }
 
