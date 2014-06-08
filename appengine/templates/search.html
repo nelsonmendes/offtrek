@@ -56,9 +56,11 @@
   <body>
 
     <div class="container">
-        <form id="search_form" method="get" action="search">
-            <input type="text" class="search_textinput" name="term" size="21" maxlength="25" placeholder="{{term}}"><input type="submit" value="pesquisar" class="search_button">
-        </form>
+        <div class="row">
+      <form id="search_form" method="get" action="search">
+        <div class="col-sm-12">
+        <input id="search_input" type="text" class="" name="term" placeholder="Search" size="21" maxlength="20">
+      </div>
 		<br/>
 		<div class="search_posts"> Publicações </div>
 	    <!-- Notifications -->

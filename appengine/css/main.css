@@ -173,3 +173,16 @@ button.blue:hover{
 	background-color: #fff3e8;
 	border: solid 1px #efc296;
 }
+
+#search_button{
+	background-color: #7C8C66;
+}
+
+#search_button:hover{
+	background-color: #99B179;
+}
+
+#search_input{
+	width: 100%;
+	text-align: center;
+}
