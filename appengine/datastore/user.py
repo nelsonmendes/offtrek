@@ -111,7 +111,7 @@ def editUserPassword(email, old_password, new_password):
 def loginUser(email, password):
     user_query = User.all()
     user_query.filter("email =", email)
-    user_query.filter("password =", encrypt(password))
+    user_query.filter("password =", password)
     user = user_query.get()
     if (user is not None):
         return user.key().id()
