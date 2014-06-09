@@ -11,7 +11,8 @@ class Post(db.Model):
 	user = db.ReferenceProperty(User, required=True)
 	title = db.StringProperty(required=True)
 	photo = db.BlobProperty()
-	xml = db.TextProperty()
+	xml = db.TextProperty(required=True)
+	trek_id = db.StringProperty(required=True)
 	rating = db.RatingProperty()
 	description = db.TextProperty()
 	tags = db.ListProperty(str)
@@ -20,9 +21,9 @@ class Post(db.Model):
 
 
 # ----------------- FUNCTIONS POST -----------------
-def addPost(user, title, photo, xml):
+def addPost(user, title, photo, xml, trek_id):
 	try:
-		post = Post(user=user, title=title, xml=xml)
+		post = Post(user=user, title=title, xml=xml, trek_id=trek_id)
 		post.put()
 		return post.key().id()
 		
@@ -65,6 +66,11 @@ def getPosts():
 def getPostByID(post_id):
 	post = Post.get_by_id(post_id)
 	return post
+
+def getPostByTrekId(trek_id):
+	post_query = Post.all()
+	post_query.filter("trek_id =", trek_id)
+	return post_query.get()
 
 def getPostsByUser(user_id):
 	user = User.get_by_id(user_id)

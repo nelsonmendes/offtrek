@@ -50,6 +50,7 @@ application = webapp2.WSGIApplication([
     ('/api/delete_user',api.DeleteUser),
     ('/api/edit_post', api.EditPost),
     ('/api/get_post', api.GetPost),
+    ('/api/get_gpx', api.GetGpx),
     ('/api/like', api.Like),
     ('/api/receive_data', api.ReceiveData),
     ('/api/toggleFollow', api.Follow),

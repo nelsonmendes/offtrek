@@ -17,3 +17,4 @@ from delete_user import DeleteUser
 from password_verification import PasswordVerification
 from follow import Follow
 from receive_data import ReceiveData
+from get_gpx import GetGpx
