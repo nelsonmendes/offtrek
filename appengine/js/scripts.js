@@ -832,7 +832,7 @@ function showRecipeClick(elem){
 function addCommentClick(elem){
 	var comment = $(elem).parent().children('textarea').val();
 	comment = stripHTML(comment)
-	var postID = $(elem).parent().parent().attr("id");
+	var postID = $(elem).parent().parent().parent().attr("id");
 	$(elem).parent().children('textarea').val("");
 	if(comment.length > 0) {
 		requestAddComment(postID, comment);
