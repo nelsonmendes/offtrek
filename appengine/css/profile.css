@@ -15,7 +15,7 @@
 }
 
 .profileBox .data > .name{
-	color: #d98451;
+	color: #428bca;
 	font-size: 20px;
 }
 
@@ -32,13 +32,19 @@
 	font-size: 14px;
 	cursor: pointer;
 	color: #d98451;
+	background-color: #4C4C4C;
+color: #FFF;
+border: solid 1px #3D3D36;
 }
 
 .profileBox .actions button:hover{
-	background: #fad8b6;
+	background: #4078d5;
 }
 
 .profileBox .actions button.tofollow {
 	background: #eeeeee;
 	color: #999999;
+}
+.gender{
+	color: black;
 }
