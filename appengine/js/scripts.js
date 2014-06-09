@@ -122,14 +122,15 @@ function gmaps() {
     var map = new google.maps.Map(document.getElementById("map_canvas"), {
       mapTypeId: google.maps.MapTypeId.TERRAIN
     });
-    
+    var trek_id = $('#trek_id').text();
     $.ajax({
      type: "GET",
      url: "/api/get_gpx",
-     data: { trek_id: "identificador Unico"},
+     data: { trek_id: trek_id},
      dataType: "xml",
      success: function(xml) {
        var points = [];
+       var waypoints = [];
        var bounds = new google.maps.LatLngBounds ();
        $(xml).find("trkpt").each(function() {
          var lat = $(this).attr("lat");
