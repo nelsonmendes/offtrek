@@ -24,9 +24,9 @@ class SearchResults(BaseHandler):
             # Get post yummis
             def putYummys(post):
                 post_id = post.key().id()
-                yummys = getPostYummys(post_id)
+                yummys = getPostLikes(post_id)
                 post.yummys = len(yummys)
-                post.yummyDone = YummyDone(user_id, post_id)
+                post.yummyDone = LikeDone(user_id, post_id)
                 return post
     
             # Get post comments

@@ -738,11 +738,11 @@ function yummyClick(action){
 
 function addYummy(postId){
 	$.ajaxSetup( { "async": false } );
-    var data = $.getJSON("api/yummy",{
+    var data = $.getJSON("api/like",{
             postId: postId
      });
     $.ajaxSetup( { "async": true } );
-    console.log("Called api/yummy?postId="+postId)
+    console.log("Called api/like?postId="+postId)
     console.log($.parseJSON(data["responseText"]));
     return $.parseJSON(data["responseText"])["answer"] == 'done' ;
 }
