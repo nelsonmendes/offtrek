@@ -26,43 +26,8 @@ $(document).ready(function(){
 		dateFormat: 'dd/mm/yy'
 	});
 
-	$(".gmaps").load(function(){
-		console.log("hello maps");
-	    var map = new google.maps.Map(document.getElementById("map_canvas"), {
-	      mapTypeId: google.maps.MapTypeId.TERRAIN
-	    });
-	    
-	    $.ajax({
-	     type: "GET",
-	     url: "/api/track.gpx",
-	     dataType: "xml",
-	     success: function(xml) {
-	       var points = [];
-	       var bounds = new google.maps.LatLngBounds ();
-	       $(xml).find("trkpt").each(function() {
-	         var lat = $(this).attr("lat");
-	         var lon = $(this).attr("lon");
-	         var p = new google.maps.LatLng(lat, lon);
-	         points.push(p);
-	         bounds.extend(p);
-	       });
-
-	       var poly = new google.maps.Polyline({
-	         // use your own style here
-	         path: points,
-	         strokeColor: "#FF00AA",
-	         strokeOpacity: .7,
-	         strokeWeight: 4
-	       });
-	       
-	       poly.setMap(map);
-	       
-	       // fit bounds to track
-	       map.fitBounds(bounds);
-	     
-	    	}
-	  	});
-	});
+	$('#map_canvas').bind('map',gmaps());
+	$('#map_canvas').trigger('map');
 	
 	$('#register').click(function(){
 		registerClick();
@@ -160,7 +125,8 @@ function gmaps() {
     
     $.ajax({
      type: "GET",
-     url: "/api/track.gpx",
+     url: "/api/get_gpx",
+     data: { trek_id: "identificador Unico"},
      dataType: "xml",
      success: function(xml) {
        var points = [];

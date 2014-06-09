@@ -18,5 +18,3 @@ class GetGpx(webapp2.RequestHandler):
 			output["result"] = "error"
 			output["stack"] = traceback.format_exc()
 			self.response.out.write(json.dumps(output))
-
-    	
